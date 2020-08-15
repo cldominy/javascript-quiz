@@ -1,0 +1,20 @@
+.hide{
+    display: none
+}
+
+.center-align{
+    text-align: center;
+}
+
+.pad-title{
+    padding-top: 50px;
+}
+
+.intro{
+    padding-top: 25px;
+    width: 500px;
+}
+
+#question{
+    text-emphasis: bold;
+}
