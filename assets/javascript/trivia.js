@@ -10,11 +10,11 @@ var inputScore = document.querySelector("#input-highscore");
 var viewScore = document.querySelector("#view-highscore");
 var finalScore = document.querySelector("#final-score");
 var userName = document.querySelector("#name");
+var localScores = document.querySelector("#local-scores");
 
 // Changing Variables
 var timeLeft = questionList.length*15;
 var index = 0;
-var score = 0;
 var setIntervalID;
 
 // Start Button -> Hides main menu, sets timer, and presents first question
@@ -92,7 +92,7 @@ function questionClick() {
     var initials = userName.value.trim();
   
     if (initials !== "") {
-      var highscore = JSON.parse(window.localStorage.getItem("highscore"));
+      var highscore = JSON.parse(window.localStorage.getItem("highscore")) || [];
   
       var newScore = {
         score: timeLeft,
@@ -102,7 +102,7 @@ function questionClick() {
       highscore.push(newScore);
       window.localStorage.setItem("highscore", JSON.stringify(highscore));
   
-      window.location.href = "highscore.html";
+      window.location.href = "highscores.html";
     }
 
     else{
