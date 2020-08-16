@@ -20,7 +20,7 @@ function displayScores() {
 }
 
 clearBttn.onclick = function () {
-  window.localStorage.removeItem("highscores");
+  window.localStorage.removeItem("highscore");
   window.location.reload();
 };
 
