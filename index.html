@@ -53,7 +53,7 @@
       </p>
       <br />
       <!-- Start Quiz Button -->
-      <button id="play">Start Quiz!</button>
+      <button class= "btn btn-outline-info" id="play">Start Quiz!</button>
     </div>
     </div>
 </div>
@@ -63,9 +63,14 @@
     <div class="container-fluid">
         <div class="row justify-content-md-center pad-title">
             <div id="start" class="hide">
-                <h2 id="question"></h2>
-                <button type="button" class="btn btn-outline-info">Info</button>
-                <ol id="choices"></ol>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 id="question"></h2>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12" id="choices"></div>
+            </div>
               </div>
         </div>
     </div>
@@ -73,9 +78,15 @@
 
 
     <!-- High Score Input -->
+    <div class="container-fluid">
+        <div class="row justify-content-md-center pad-title">
     <div id="input-highscore" class="hide">
-      <input type="text" id="name" />
-      <button id="add">Submit</button>
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="name"></div>
+            <button type="submit" class="btn btn-primary" id="add">Submit</button>
+    </div>
+    </div>
     </div>
 
     <!-- View High Scores -->
@@ -86,6 +97,7 @@
     </div>
 
     <!-- JavaScript Elements -->
+    <script src="./assets/javascript/questions.js"></script>
     <script src="./assets/javascript/trivia.js"></script>
   </body>
 </html>

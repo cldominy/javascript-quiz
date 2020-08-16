@@ -18,3 +18,7 @@
 #question{
     text-emphasis: bold;
 }
+
+.choice{
+    margin: 15px;
+}

@@ -1,114 +1,85 @@
+// Variables from Front Page
 var startBttn = document.querySelector("#play")
 var startScreen = document.querySelector("#initial")
 var questions = document.querySelector("#start")
 var timeDisplay = document.querySelector("#time")
 var questionTitle = document.querySelector("#question")
 var choiceList = document.querySelector("#choices")
-var setIntervalID
-var index = 0
 
-var questionList = [
-    {
-        title: "Arrays in Javascript can be used to store ______.", 
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        correctAnswer: "all of the above"  
-    },
-
-    {
-        title: "Question 2", 
-        choices: ["choice 21", "choice 22", "choice 23", "choice 24"],
-        correctAnswer: "choice 21"  
-    },
-
-    {
-        title: "Question 3", 
-        choices: ["choice 31", "choice 32", "choice 33", "choice 34"],
-        correctAnswer: "choice 34"  
-    },
-
-    {
-        title: "Question 4", 
-        choices: ["choice 41", "choice 42", "choice 43", "choice 44"],
-        correctAnswer: "choice 42"  
-    },
-
-    {
-        title: "Question 5", 
-        choices: ["choice 51", "choice 52", "choice 53", "choice 54"],
-        correctAnswer: "choice 53"  
-    },
-]
-
-// Global Variables
+// Changing Variables
 var timeLeft = questionList.length*15
+var index = 0
 var score = 0
-var currentQuestion = 0
-var finalQuestion = questionList.length
+var setIntervalID
 
-// Start button hides start screen and shows first question list. It creates a time interval and starts timer
+// Start Button -> Hides main menu, sets timer, and presents first question
 startBttn.onclick=function(){
     startScreen.classList.add("hide");
     questions.classList.remove("hide");
     setIntervalID = setInterval(countdown, 1000);
-
+    generateQuestions();
 }
 
-// Timer function. It decreaes every one second and displays the time remainin. If the time reaches zero or the last question is answered, the timer stops 
+// Timer Countdown -> Generates time, displays, and begins countdown. Ends quiz if the time ever hits 0
 function countdown(){
       timeDisplay.textContent=timeLeft;
       timeLeft--;
-      if (index < questionList.length){
-        generateQuestions();
+    //   check if time has run out
+      if (time <= 0){
+        finishQuiz();
       }
-      else {
-          console.log("stop", setIntervalID);
-          clearInterval(setIntervalID);
-      }
-
 }
+
+// Stops Timer
+function finishQuiz() {
+    clearInterval(setIntervalID);
+  }
 
 // Begins generating the questions from the array above
 function generateQuestions(){
-
-   questionTitle.textContent= questionList[index].title;
-   var choices = questionList[index].choices
+    // Current Question Variable
+var currentQuestion = questionList[index];
+    // Updating title with current question
+   questionTitle.textContent= currentQuestion.title;
+    // Generating possible choices    
+   var choices = currentQuestion.choices
    choiceList.textContent = ""
-     for (let i = 0; i < choices.length; i++) {
-         var li = document.createElement("li")
-         var p = document.createElement("p")
-         p.textContent = choices[i]
-         li.appendChild(p)
-         li.onclick=function(){
-             if (index < questionList.length){
-                index++;
-             }
-             else{
-                clearInterval(setIntervalID);
-             }
-             
-         }
-         choiceList.appendChild(li)
-     }
+    // Looping through each choice
+   currentQuestion.choices.forEach(function(choice, i) {
+         var bttn = document.createElement("button")
+         bttn.classList.add("choice", "btn", "btn-outline-info", "d-block")
+         bttn.setAttribute("value", choice)
+         bttn.textContent = choices[i]
+         bttn.onclick = questionClick;
+         choiceList.appendChild(bttn)
+     });
   
 }
 
-// Check the answer
-function answerCheck(answer){
-    correct = questionList.correctAnswer
-    log.console(correct && currentQuestion !== finalQuestion);
-    if (answer === correct){
-        score++;
-        console.log("This answer is correct");
-        currentQuestion++
+function questionClick() {
+    // If user is wrong
+    console.log(this.value)
+    if ((this.value) !== questionList[index].correctAnswer) {
+      // Reduce time remaining
+        timeLeft -= 15;
+      // If user reduces time past 0, it remains at 0
+        if (timeLeft < 0) {
+            timeLeft = 0;}
+      // Prompt user that they are incorrect
+        console.log("Incorrect!")
+      // Change the time display
+        timeDisplay.textContent = timeLeft;
+    } 
+    // If user is right
+    else {
+      console.log("Correct!");
+    }
+    // Generating next question
+    index++;
+    // Checking for more questions 
+    if (index === questionList.length) {
+      quizEnd();
+    } else {
         generateQuestions();
     }
-    else if (answer !== correct && currentQuestion !== finalQuestion){
-        console.log("This answer is incorrect");
-        currentQuestion++
-        timeLeft-10;
-        generateQuestions();
-    }
-    else{
-        console.log("Congrats, you are done");
-    }
-}
+  }
