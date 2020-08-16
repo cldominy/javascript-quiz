@@ -8,4 +8,4 @@ This website was built from scratch using Javascript and Bootstrap. It was desig
 
 I created this website for simplicity, so the user can focus on reading each question and navigating between the two pages.
 
-![Main Page to Start Quiz](./static/media/main-page.PNG)
+![Preview of the quiz](./static/media/preview.gif)
