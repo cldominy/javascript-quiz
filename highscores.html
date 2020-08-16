@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Meyer's Web Browser Reset -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+
+    <!-- Custom Styling by Me -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Bootstrap Styling -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <title>Javascript Quiz!</title>
+  </head>
+
+  <body>
+
+    <!-- View High Scores -->
+    <div class="container-fluid">
+      <div class="row justify-content-md-center pad-title">
+        <div class="col" id="view-highscore">
+          <h1>Highscores</h1>
+          <ol id="localScores"></ol>
+          <a href="./index.html"> <button class="btn btn-outline-info" id="go-back">Go Back</button></a>
+          <button class="btn btn-outline-info" id="clear-score">
+            Clear Highscore
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Elements -->
+    <script src="./assets/javascript/questions.js"></script>
+    <script src="./assets/javascript/trivia.js"></script>
+  </body>
+</html>

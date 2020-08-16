@@ -29,7 +29,9 @@
     <header class="navbar navbar-inverse navbar-light bg-light">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a href="#" class="navbar-brand heading" id="highscore">View Highscores</a>
+          <a href="./highscores.html" class="navbar-brand heading" id="highscore"
+            >View Highscores</a
+          >
         </div>
         <!-- Time -->
         <ul class="nav navbar-nav navbar-right">
@@ -41,59 +43,57 @@
     </header>
 
     <!-- Coding Quiz Challenge Header -->
-<div class="container-fluid">
-    <div class="row justify-content-md-center">
-    <div class="center-align" id="initial">
-      <h1 class="pad-title">Coding Quiz Challenge</h1>
-    
-      <p class="intro">
-        Try to answer the following code-related questions within the time
-        limit. Keep in mind that incorrect answers will penalize your score/time
-        by ten seconds!
-      </p>
-      <br />
-      <!-- Start Quiz Button -->
-      <button class= "btn btn-outline-info" id="play">Start Quiz!</button>
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="center-align" id="initial">
+          <h1 class="pad-title">Coding Quiz Challenge</h1>
+          <p class="intro">
+            Try to answer the following code-related questions within the time
+            limit. Keep in mind that incorrect answers will penalize your
+            score/time by ten seconds!
+          </p>
+          <br />
+          <!-- Start Quiz Button -->
+          <button class="btn btn-outline-info" id="play">Start Quiz!</button>
+        </div>
+      </div>
     </div>
-    </div>
-</div>
 
     <!-- Questions and Choices -->
-
     <div class="container-fluid">
-        <div class="row justify-content-md-center pad-title">
-            <div id="start" class="hide">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 id="question"></h2>
-                    </div>
-                </div>
-            <div class="row">
-                <div class="col-md-12" id="choices"></div>
+      <div class="row justify-content-md-center pad-title">
+        <div id="start" class="hide">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 id="question"></h2>
             </div>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="choices"></div>
+          </div>
         </div>
+      </div>
     </div>
-
-
 
     <!-- High Score Input -->
     <div class="container-fluid">
-        <div class="row justify-content-md-center pad-title">
-    <div id="input-highscore" class="hide">
-        <div class="form-group">
-            <label for="Name">Name</label>
-            <input type="text" class="form-control" id="name"></div>
-            <button type="submit" class="btn btn-primary" id="add">Submit</button>
-    </div>
-    </div>
-    </div>
-
-    <!-- View High Scores -->
-    <div id="view-highscore" class="hide">
-      <div id="display-score"></div>
-      <button id="go-back">Go Back</button>
-      <button id="clear-score">Clear Highscore</button>
+      <div class="row justify-content-md-center pad-title">
+        <div id="input-highscore" class="hide">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>All Done!</h1>
+                    <h2>Your final score is <span id="final-score">0</span></h2>
+                </div>
+            </div>
+          <div class="form-group">
+            <label for="Name">Enter initials:</label>
+            <input type="text" class="form-control" id="name" maxlength="4"/>
+          </div>
+          <button type="submit" class="btn btn-outline-info" id="add">
+            Submit 
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- JavaScript Elements -->

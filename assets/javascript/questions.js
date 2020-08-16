@@ -6,26 +6,26 @@ var questionList = [
     },
 
     {
-        title: "Question 2", 
-        choices: ["choice 21", "choice 22", "choice 23", "choice 24"],
-        correctAnswer: "choice 21"  
+        title: "Commonly used data types DO NOT include", 
+        choices: ["strings", "booleans", "alerts", "numbers"],
+        correctAnswer: "alerts"  
     },
 
     {
-        title: "Question 3", 
-        choices: ["choice 31", "choice 32", "choice 33", "choice 34"],
-        correctAnswer: "choice 34"  
+        title: "String values must be enclosed within _______ when being assigned to variables", 
+        choices: ["commas", "curly brackets", "quotes", "parentheses"],
+        correctAnswer: "parentheses"  
     },
 
     {
-        title: "Question 4", 
-        choices: ["choice 41", "choice 42", "choice 43", "choice 44"],
-        correctAnswer: "choice 42"  
+        title: "A very useful tool used during development and debugging for printing content to the debugger is:", 
+        choices: ["JavaScript", "console log", "terminal / bash", "for loops"],
+        correctAnswer: "console log"  
     },
 
     {
-        title: "Question 5", 
-        choices: ["choice 51", "choice 52", "choice 53", "choice 54"],
-        correctAnswer: "choice 53"  
+        title: "The condition in an if/else statement is enclosed within _______.", 
+        choices: ["parentheses", "curly brackets", "quotes", "square brackets"],
+        correctAnswer: "parentheses"  
     },
 ]
